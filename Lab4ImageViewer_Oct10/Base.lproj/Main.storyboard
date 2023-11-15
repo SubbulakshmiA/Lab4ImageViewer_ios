@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lab4ImageViewer_Oct10" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aoh-zw-kHQ">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jcE-69-WpI" appends="YES" id="vxU-OD-ace"/>
+                                </connections>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i6V-93-Yk3">
+                                <rect key="frame" x="0.0" y="608" width="393" height="236"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dK4-3V-oBF">
+                                        <rect key="frame" x="186.66666666666666" y="0.0" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhT-JK-0QE">
+                                        <rect key="frame" x="36.666666666666657" y="20" width="320" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="DSS-Vy-ldH"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="WSz-IF-ddJ"/>
+                                        </connections>
+                                    </pickerView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i6V-93-Yk3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3il-U6-Vu6"/>
+                            <constraint firstAttribute="bottom" secondItem="i6V-93-Yk3" secondAttribute="bottom" id="6qG-Vb-2tv"/>
+                            <constraint firstItem="i6V-93-Yk3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9H1-xf-Fny"/>
+                            <constraint firstItem="i6V-93-Yk3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BbM-SE-Wx3"/>
+                            <constraint firstItem="Aoh-zw-kHQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Frh-P5-EgL"/>
+                            <constraint firstItem="i6V-93-Yk3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HGr-Vv-3C6"/>
+                            <constraint firstAttribute="bottom" secondItem="i6V-93-Yk3" secondAttribute="bottom" constant="8" id="JCP-G0-Xs1"/>
+                            <constraint firstItem="i6V-93-Yk3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KOR-Wb-5Dt"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Aoh-zw-kHQ" secondAttribute="bottom" id="Z7S-DT-iGO"/>
+                            <constraint firstAttribute="bottom" secondItem="i6V-93-Yk3" secondAttribute="bottom" constant="8" id="c04-mE-azD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i6V-93-Yk3" secondAttribute="trailing" id="eoD-79-zph"/>
+                            <constraint firstItem="Aoh-zw-kHQ" firstAttribute="leading" secondItem="i6V-93-Yk3" secondAttribute="leading" id="fYU-PJ-3Td"/>
+                            <constraint firstItem="Aoh-zw-kHQ" firstAttribute="trailing" secondItem="i6V-93-Yk3" secondAttribute="trailing" id="tsm-dy-hEx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myActivityIndicator" destination="dK4-3V-oBF" id="9Re-hE-tJz"/>
+                        <outlet property="myGesture" destination="jcE-69-WpI" id="hxE-4M-mtL"/>
+                        <outlet property="myImageView" destination="Aoh-zw-kHQ" id="LDk-SZ-Xh9"/>
+                        <outlet property="myPickerView" destination="lhT-JK-0QE" id="Q3c-bP-jA6"/>
+                        <outlet property="myStackView" destination="i6V-93-Yk3" id="05r-9T-okU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="jcE-69-WpI"/>
+            </objects>
+            <point key="canvasLocation" x="-39" y="-519"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
